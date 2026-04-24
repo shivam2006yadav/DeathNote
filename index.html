@@ -3,55 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryuk | God of Death</title>
+  <title>Ryuk | Death Note</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Intro Screen -->
-<div id="intro">
-  <h1>DEATH NOTE</h1>
-  <button id="enterBtn">Enter</button>
-</div>
+  <!-- Intro Screen -->
+  <div id="intro">
+    <h1>DEATH NOTE</h1>
+    <button id="enterBtn">ENTER THE NOTE</button>
+  </div>
 
-<!-- Audio -->
-<audio id="bgMusic" src="assets/kyrie.mp3" loop preload="auto"></audio>
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/kyrie.mp3" type="audio/mpeg">
+  </audio>
 
-<!-- Main Content -->
-<main id="mainContent" class="hidden">
+  <!-- Main Content -->
+  <main id="mainContent" class="hidden">
 
-  <header>
-    <h1>RYUK</h1>
-    <p>Shinigami. Observer. Chaos Enthusiast.</p>
-  </header>
+    <header>
+      <h1>RYUK</h1>
+      <p>Shinigami. Observer. Chaos Enthusiast.</p>
+    </header>
 
-  <section class="image-section">
-    <img src="assets/ryuk.jpg" alt="Ryuk">
-  </section>
+    <section class="image-section">
+      <img src="assets/ryuk.jpg" alt="Ryuk">
+    </section>
 
-  <section>
-    <h2>Who is Ryuk?</h2>
-    <p>
-      Ryuk is a Shinigami who dropped his Death Note into the human world out of boredom.
-      He is not a hero, nor a villain—only an observer entertained by human behavior.
-    </p>
-  </section>
+    <section>
+      <h2>Who is Ryuk?</h2>
+      <p>Ryuk is a Shinigami from the realm of death who drops his Death Note into the human world purely out of boredom. Detached from human morality, he serves as an observer, fascinated by the chaos that unfolds when extraordinary power is placed in human hands.</p>
+      <p>His actions set in motion the legendary story of Light Yagami, Kira, and the battle for justice that would captivate the world.</p>
+    </section>
 
-  <section>
-    <h2>Nature</h2>
-    <p>
-      Detached and unpredictable, Ryuk thrives on chaos and curiosity.
-      His only real attachment: apples.
-    </p>
-  </section>
+    <section>
+      <h2>The Legacy of Death Note</h2>
+      <p>Death Note is one of the most iconic psychological thrillers in manga and anime history. It explores justice, power, morality, corruption, and the consequences of playing god. Through its unforgettable characters and intricate storytelling, it challenges viewers to question what true justice really means.</p>
+    </section>
 
-  <footer>
-    <p>Fan Concept | Ryuk Only</p>
-  </footer>
+    <section class="characters-section">
+      <h2>Main Characters</h2>
 
-</main>
+      <div class="character-grid">
+        <div class="character-card">
+          <img src="assets/light.jpg" alt="Light Yagami">
+          <h3>Light Yagami</h3>
+          <p>The genius student who becomes Kira, determined to create a new world through absolute justice.</p>
+        </div>
 
-<script src="script.js"></script>
+        <div class="character-card">
+          <img src="assets/l.jpg" alt="L Lawliet">
+          <h3>L Lawliet</h3>
+          <p>The world's greatest detective and Kira's greatest rival, known for his unparalleled intellect.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/ryuk.jpg" alt="Ryuk">
+          <h3>Ryuk</h3>
+          <p>The Shinigami whose curiosity and boredom sparked the entire story.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/misa.jpg" alt="Misa Amane">
+          <h3>Misa Amane</h3>
+          <p>A famous idol and devoted follower of Kira, willing to sacrifice everything for love.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/near.jpg" alt="Near">
+          <h3>Near</h3>
+          <p>L's calm and analytical successor, possessing extraordinary deductive abilities.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/mello.jpg" alt="Mello">
+          <h3>Mello</h3>
+          <p>A bold strategist whose aggressive methods complement Near's intellect.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/rem.jpg" alt="Rem">
+          <h3>Rem</h3>
+          <p>A compassionate Shinigami whose loyalty to Misa changes the course of the story.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/soichiro.jpg" alt="Soichiro Yagami">
+          <h3>Soichiro Yagami</h3>
+          <p>Light's father and a dedicated police chief committed to justice.</p>
+        </div>
+
+        <div class="character-card">
+          <img src="assets/matsuda.jpg" alt="Touta Matsuda">
+          <h3>Touta Matsuda</h3>
+          <p>An earnest investigator whose courage and humanity make him unforgettable.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Death Note Fan Experience | Enter the world of Kira, L, and Ryuk</p>
+      <button id="musicToggle">🔊 Music On</button>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+<!-- style.css -->
+<style>
+body {
+  margin: 0;
+  background: black;
+  color: #e6e6e6;
+  font-family: 'Courier New', monospace;
+}
+
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#intro h1 {
+  color: red;
+  font-size: 72px;
+  letter-spacing: 8px;
+  text-shadow: 0 0 20px red;
+}
+
+#enterBtn {
+  padding: 15px 40px;
+  font-size: 20px;
+  border: 2px solid red;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#enterBtn:hover {
+  background: red;
+  color: black;
+  box-shadow: 0 0 20px red;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header h1 {
+  color: red;
+  font-size: 60px;
+}
+
+.image-section img {
+  display: block;
+  margin: 30px auto;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px red;
+}
+
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+section h2 {
+  color: red;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.characters-section {
+  padding: 60px 20px;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.character-card {
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+.character-card img {
+  width: 100%;
+  max-width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.character-card h3 {
+  color: red;
+  font-size: 24px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+}
+
+#musicToggle {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: transparent;
+  border: 1px solid red;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#musicToggle:hover {
+  background: red;
+  color: black;
+}
+</style>
+
+<!-- script.js -->
+<script>
+const enterBtn = document.getElementById('enterBtn');
+const intro = document.getElementById('intro');
+const main = document.getElementById('mainContent');
+const music = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+
+enterBtn.addEventListener('click', () => {
+  intro.style.display = 'none';
+  main.classList.remove('hidden');
+
+  music.volume = 0.35;
+  music.play().catch(error => console.log('Playback blocked:', error));
+});
+
+musicToggle.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+    musicToggle.textContent = '🔊 Music On';
+  } else {
+    music.pause();
+    musicToggle.textContent = '🔇 Music Off';
+  }
+});
+</script>
