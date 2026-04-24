@@ -4,24 +4,40 @@ const main = document.getElementById("mainContent");
 const music = document.getElementById("bgMusic");
 
 enterBtn.addEventListener("click", () => {
+  // Hide intro, show main content
   intro.style.display = "none";
   main.classList.remove("hidden");
 
-  music.volume = 0.7;
+  // Start music at 0 volume
+  music.volume = 0;
+  music.play().catch(() => {
+    console.log("Playback blocked");
+  });
 
-  // Start music
-  music.play();
+  // Fade-in effect
+  let vol = 0;
+  const targetVolume = 0.7;
 
-  // Ensure it keeps playing even if interrupted
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && music.paused) {
-      music.play();
+  let fade = setInterval(() => {
+    if (vol < targetVolume) {
+      vol += 0.05;
+      music.volume = vol;
+    } else {
+      music.volume = targetVolume;
+      clearInterval(fade);
     }
-  });
+  }, 200);
+});
 
-  // Extra fallback loop enforcement
-  music.addEventListener("ended", () => {
-    music.currentTime = 0;
-    music.play();
-  });
+// Resume music if user switches tabs
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && music.paused) {
+    music.play().catch(() => {});
+  }
+});
+
+// Extra safety: restart if somehow stopped
+music.addEventListener("ended", () => {
+  music.currentTime = 0;
+  music.play().catch(() => {});
 });
